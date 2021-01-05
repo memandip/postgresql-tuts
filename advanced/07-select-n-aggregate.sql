@@ -24,11 +24,12 @@ SELECT count(*) AS city_counter, s.state_name
 FROM us_cities c
 JOIN us_states s ON s.id = c.state
 GROUP BY s.state_name
-HAVING count(*) = (
-    SELECT MAX(sc.city_counter) FROM (
-        SELECT count(*) AS city_counter
-        FROM us_cities c
-        JOIN us_states s ON s.id = c.state
-        GROUP BY s.id
-    ) sc
-); 
+-- HAVING count(*) = (
+--     SELECT MAX(sc.city_counter) FROM (
+--         SELECT count(*) AS city_counter
+--         FROM us_cities c
+--         JOIN us_states s ON s.id = c.state
+--         GROUP BY s.id
+--     ) sc
+-- )
+ORDER BY city_counter desc; 

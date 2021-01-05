@@ -10,6 +10,11 @@
 -- WHERE TO_TSVECTOR(state_name)
 -- @@ TO_TSQUERY('(District & columbia) | COLORADO');
 
+-- SELECT * FROM us_cities
+-- WHERE TO_TSVECTOR(city || ' ' ||county)
+-- @@ TO_TSQUERY('Skagway | Hoonah | Angoon');
+
+-- wildcard
 SELECT * FROM us_cities
-WHERE TO_TSVECTOR(city || ', ' ||county)
-@@ TO_TSQUERY('Skagway | Hoonah | Angoon');
+WHERE TO_TSVECTOR(county)
+@@ TO_TSQUERY('lake | dilling:*');

@@ -11,6 +11,8 @@
 --     SELECT MAX(temp_lo) FROM weather
 -- );
 
-SELECT city, MAX(temp_lo)
+SELECT cities.name, MAX(temp_lo)
     FROM weather
-    GROUP BY city;
+    JOIN cities
+    ON cities.id = weather.city
+    GROUP BY cities.name;
