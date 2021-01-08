@@ -1,17 +1,17 @@
-CREATE TABLE IF NOT EXISTS us_states (
-    id BIGSERIAL PRIMARY KEY,
-    state_code VARCHAR(2),
-    state_name VARCHAR(50)
-);
+-- CREATE TABLE IF NOT EXISTS us_states (
+--     id BIGSERIAL PRIMARY KEY,
+--     state_code VARCHAR(2),
+--     state_name VARCHAR(50)
+-- );
 
-CREATE TABLE IF NOT EXISTS us_cities (
-    id BIGSERIAL PRIMARY KEY,
-    state BIGINT REFERENCES us_states(id),
-    city VARCHAR(50),
-    county VARCHAR(50),
-    latitude FLOAT,
-    longitude FLOAT
-);
+-- CREATE TABLE IF NOT EXISTS us_cities (
+--     id BIGSERIAL PRIMARY KEY,
+--     state BIGINT REFERENCES us_states(id),
+--     city VARCHAR(50),
+--     county VARCHAR(50),
+--     latitude FLOAT,
+--     longitude FLOAT
+-- );
 
 BEGIN;
 
