@@ -6,11 +6,12 @@
 -- use JSON_AGG for json data
 
 SELECT s.state_name, 
-    ARRAY_AGG(c.id) as cityIds, 
-    ARRAY_AGG(c.county) as counties,
-    ARRAY_AGG(c.city) as cities,
+    -- ARRAY_AGG(c.id) as cityIds, 
+    -- ARRAY_AGG(c.county) as counties,
+    -- ARRAY_AGG(c.city) as cities,
     JSON_AGG(
         JSON_BUILD_OBJECT(
+            'id', c.id,
             'lat', c.latitude, 
             'lng', c.longitude,
             'county', c.county,
